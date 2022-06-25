@@ -1,0 +1,15 @@
+#title {
+    color: teal;
+    font-size: 50px;
+}
+
+.number {
+    font-size: 30px;
+}
+.number:hover{
+   text-transform: uppercase;
+}
+ol{
+    color: teal;
+    font-weight: bolder;
+}

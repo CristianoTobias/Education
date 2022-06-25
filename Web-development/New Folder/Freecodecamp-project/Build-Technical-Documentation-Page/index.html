@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Build a Technical Documentation Page</title>
+  </head>   
+  <body>
+    <main id="main-doc">
+      <nav id="navbar">
+        <header>
+          <menu>
+            <li><h1>JavaScript Data Types</h1></li>
+            <li><a class="nav-link" href="#javaScript_strings">JavaScript Strings</a></li>
+            <li><a class="nav-link" href="#javaScript_numbers">JavaScript Numbers</a></li>
+            <li><a class="nav-link" href="#javaScript_booleans">JavaScript Booleans</a></li>
+            <li><a class="nav-link" href="#javaScript_arrays">JavaScript Arrays</a></li>
+            <li><a class="nav-link" href="#javaScript_objects">JavaScript Objects</a></li>
+            <li><a class="nav-link" href="#the_typeof_operator">The typeof Operator</a></li>
+            <li><a class="nav-link" href="#undefined">Undefined</a></li>
+            <li><a class="nav-link" href="#empty_values">Empty Values</a></li>
+            <li><a class="nav-link" href="https://www.w3schools.com/js/js_variables.asp" target="_blank">References</a></li>
+          </menu>
+        </header>
+      </nav>
+
+      <!-- JavaScript Strings -->
+      <section id="javaScript_strings" class="main-section">
+        <header>JavaScript Strings</header>
+        <p>A string (or a text string) is a series of characters like "John Doe".</p>
+        <p>Strings are written with quotes. You can use single or double quotes:</p>
+        <p>You can use quotes inside a string, as long as they don't match the quotes surrounding the string:</p>
+        <pre>
+          <code>
+          let carName1 = "Volvo XC60";   // Using double quotes
+          let carName2 = 'Volvo XC60';   // Using single quotes
+          </code>
+        </pre>
+        <ul>
+          <li>There are two ways to access an individual character in a string. The first is the charAt method</li>
+          <li>The other way (introduced in ECMAScript 5) is to treat the string as an Array-like object, where the individual characters correspond to a numeric index</li>
+          <li>Escape characters in string</li>
+        </ul>
+        <pre>
+          <code>
+          let bigmouth = 'I\'ve got no right to take my place...';
+          bigmouth;
+          </code>
+        </pre>
+      </section>
+      <!-- Javascript Numbers -->
+      <section id="javaScript_numbers" class="main-section">
+        <header>JavaScript Numbers</header>
+        <p>JavaScript has only one type of numbers</p>
+        <p>Numbers can be written with, or without decimals:</p>
+        <pre>
+          <code>
+          let x1 = 34.00;     // Written with decimals
+          let x2 = 34;        // Written without decimals
+          </code>
+        </pre>
+        <p>Extra large or extra small numbers can be written with scientific (exponential) notation:</p>
+        <pre> 
+          <code>
+          let y = 123e5;      // 12300000
+          let z = 123e-5;     // 0.00123
+        </code>
+        </pre>
+        <ul>
+          <li>Numbers can be positive or negative integers. However, integers are floating-point values in JavaScript. Integers value will be accurate up to 15 digits in JavaScript. Integers with 16 digits onwards will be changed and rounded up or down; therefore, use BigInt for integers larger than 15 digits.</li>
+          <li>The BigInt type is a numeric primitive type that can store integers with arbitrary precision. Use the BigInt for the large integers having more than 15 digits. Append n to the end of an integer to make it BigInt.</li>
+          <li>The floating-point numbers in JavaScript can only keep 17 decimal places of precision; beyond that, the value will be changed.</li>
+        </ul>
+      </section>
+      <!-- JavaScript Booleans -->
+      <section id="javaScript_booleans" class="main-section">
+        <header>JavaScript Booleans</header>
+        <p>Booleans can only have two values: true or false.</p>
+        <p>Booleans are often used in conditional testing.</p>
+        <pre>
+          <code>
+          let x = 5;
+          let y = 5;
+          let z = 6;
+          (x == y)       // Returns true
+          (x == z)       // Returns false
+         </code>
+        </pre>  
+      </section>
+      <!-- Javascript Arrays -->
+      <section id="javaScript_arrays" class="main-section">
+        <header>JavaScript Arrays</header>
+        <p>JavaScript arrays are written with square brackets.</p>
+        <p>Array items are separated by commas.</p>
+        <p>The following code declares (creates) an array called cars, containing three items (car names):</p>
+        <ul>
+          <li>Arrays são um tipo especial de objetos. O tipo de operador em JavaScript retorna "objeto" para arrays. Mas, os arrays de JavaScript são melhor descritos como arrays.</li>
+          <li>JavaScript variables can be objects. Arrays are special types of objects. Therefore, you can have variables of different types in the same Array.</li>
+        </ul>
+        <pre>
+          <code>
+          const cars = ["Saab", "Volvo", "BMW"];</code>
+        </pre>
+      </section>
+      <!-- JavaScript Objects -->
+      <section id="javaScript_objects" class="main-section">
+        <header>JavaScript Objects</header>
+        <p>JavaScript objects are written with curly braces {}.</p>
+        <p>Object properties are written as name:value pairs, separated by commas.</p>
+        <p>The object (person) in the example bellow has 4 properties: firstName, lastName, age, and eyeColor.</p>
+        <pre>
+          <code>
+          const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};</code>
+          </pre>   
+      </section>
+      <!-- JavaScript Typeof Operator -->
+      <section id="the_typeof_operator" class="main-section">
+        <header>The typeof Operator</header>
+        <p>You can use the JavaScript typeof operator to find the type of a JavaScript variable</p>
+        <p>The typeof operator returns the type of a variable or an expression:</p>
+        <pre>   
+          <code>
+          typeof ""             // Returns "string"
+          typeof "John"         // Returns "string"
+          typeof "John Doe"     // Returns "string"
+          typeof 0              // Returns "number"
+          typeof 314            // Returns "number"
+          typeof 3.14           // Returns "number"
+          typeof (3)            // Returns "number"
+          typeof (3 + 4)        // Returns "number"
+          </code>
+        </pre> 
+      </section>
+      <!-- Javascript Undefined -->
+      <section id="undefined" class="main-section">
+        <header>Undefined</header>
+        <p>In JavaScript, a variable without a value, has the value undefined. The type is also undefined.</p>
+        <p>Any variable can be emptied, by setting the value to undefined. The type will also be undefined.</p>
+        <pre>
+          <code>
+          let car;    // Value is undefined, type is undefined
+          </code>
+          <code>
+          car = undefined;    // Value is undefined, type is undefined
+          </code>
+        </pre>
+      </section>
+      <!-- Javascript Empty Values -->
+      <section id="empty_values" class="main-section">
+        <header>Empty Values</header>
+        <p>An empty value has nothing to do with undefined.</p>
+        <p>An empty string has both a legal value and a type.</p>
+        <pre>
+          <code>
+            let car = "";    // The value is "", the typeof is "string"
+          </code>
+        </pre>
+      </section>
+    </main>     
+  </body>
+</html>
