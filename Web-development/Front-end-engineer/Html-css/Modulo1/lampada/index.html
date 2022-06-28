@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampada</title>
+    
+</head>
+<body>
+    <script>
+        let quebrada = true
+        function muda_lampada(tipo){
+            if(quebrada){
+         let aquivo = "" 
+         tipo === 1 ? arquivo = "images/lampada_acessa.jpg" :  tipo === 2 ? arquivo = "images/lampada_apagada.jpg" :  arquivo = "images/lampada_quebrada.jpg"
+            }
+            if(arquivo === "images/lampada_quebrada.jpg"){
+                quebrada = false
+            }
+         document.getElementById('lampada').src = arquivo
+        
+        
+        
+    }
+    function trocar_lampada(){
+        document.getElementById('lampada').src = "images/lampada_apagada.jpg"
+        quebrada = true
+    }
+    </script>
+    <h1>Acenda Lampada</h1>
+    <img id="lampada" src="images/lampada_apagada.jpg" onmouseover="muda_lampada(1)" onmouseout="muda_lampada(2)" onclick="muda_lampada(3)">
+    <button onclick="trocar_lampada()">Trocar lampada</button>
+</body>
+</html>

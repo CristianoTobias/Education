@@ -1,0 +1,19 @@
+.pink {
+    background-color: pink;
+    font-size: 1.4em;
+}
+
+#number-2 {
+    color: blue;
+    font-size: 3.5em;
+}
+
+#number-4 {
+    background-color: lightgreen;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.pink-cool {
+    font-size: 2em;
+}

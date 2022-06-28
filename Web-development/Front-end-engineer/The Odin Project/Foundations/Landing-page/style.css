@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+main{
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+
+}
+
+/* firt section */
+.icon{
+    display: flex;
+}
+.main-header {
+    margin: 0 auto;
+    width: 1000px;
+    height: 535px;
+    
+}
+.header {
+    background-color: #1f2937;
+    color: white;
+    
+    
+}
+.header .header-top{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.header nav  ul{
+    display: flex;
+    list-style-type: none;
+    gap: 16px;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+    
+   
+}
+
+
+.header-content img {
+    width: 500px;
+    height: 240px;
+    
+}
+#header-logo {
+    font-size: 24px;
+    color: #f9faf8;
+   }
+.text-header {
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+.button-top {
+    font-size: 18px;
+    background-color: #3882f6;
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    margin-top: 20px;
+   
+
+}
+a {
+    text-decoration: none;
+    color: #e5e7eb; 
+    font-size: 18px;
+}
+button {
+    background-color: #3882f6;
+    color: white;
+}
+
+#header-title {
+    font-size: 48px;
+    font-weight: bolder;
+    color: #f9faf8;
+}
+
+/* Second section */
+#text-information {
+    font-size: 36px;
+    font-weight: bolder;
+    color: #1f2937;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.random-information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: border;
+    background-color: white;
+    
+   
+}
+
+.random-information-figure{
+    display: flex;
+    width: 1000px;
+    height: 350px;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.random-information-figure figure {
+    width: 185px;
+   
+}
+.random-information-figure figure img {
+    border: 5px solid #3882f6;
+    width: 180px;
+    height: 250px;
+    border-radius: 10px;
+
+}
+
+figcaption{
+    width: 180px;
+    color: #1f2937; 
+    font-size: 18px;
+    font-weight: border;
+    text-align: center;
+}
+
+#figcaption-quote{
+    margin-top: 30px;
+    margin-left: 520px;
+    width: 300px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.95);
+    font-weight: bolder;
+    
+}
+
+
+/* Third section */
+.section-quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e7eb ;
+    width: 100%;
+    height: 500px;
+    padding-top: 20px;
+   
+    
+    
+}
+#quote {
+    width: 800px;
+    text-align: justify;
+    font-size: 36px;
+    font-style: italic;
+    color: #1f2937;
+   
+    
+}
+
+.third-section {
+    height: 350px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+
+#product {
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+    height: 160px;
+    background-color: #3882f6 ;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+}
+
+#second-button {
+    border: 2px solid white;
+    height: 35px;
+    border-radius: 10px;
+    width: 135px;
+    font-size: 18px;
+    width: 120px;
+}
+
+
+
+/* Fourty section */
+.footer {
+    color: white;
+    background-color: #1f2937 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
