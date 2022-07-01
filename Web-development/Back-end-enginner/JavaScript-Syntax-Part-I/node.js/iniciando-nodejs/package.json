@@ -1,0 +1,9 @@
+{
+  "name": "iniciando-nodejs",
+  "version": "1.0.0",
+  "description": "Primeiro projeto 2022 Codedrops",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Cristiano Tobias",
+  "license": "MIT"
+}
