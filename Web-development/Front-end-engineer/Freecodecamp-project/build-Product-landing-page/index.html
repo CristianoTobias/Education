@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Landing Page</title>
-    <link rel="stylesheet" href="resources/style.css">
-</head>
-<body>
-     <header id="header">
-            <section>
-                <img src="logo-guitar.jpg" alt="logo" id="header-img">
-            </section>
-            <nav id="nav-bar">
-                <menu>
-                    <li ><a class="nav-link" href="#one">Features</a></li>
-                    <li ><a class="nav-link" href="#video">How It Works</a></li>
-                    <li ><a class="nav-link" href="#prices">Pricing</a></li>
-                 </menu>
-            </nav>
-      </header>
-      <main>
-        <section class="form">
-            <form id="form" action="https://www.freecodecamp.com/email-submit" >
-                <legend><h1>Handcrafted, home-made masterpieces</h1></legend>
-                <input id="email"type="email" name="email" placeholder="Enter your e-mail address" required><br>
-                <input type="submit" id="submit">
-            </form>
-        </section>
-        <section class="one" id="one">
-            <img src="resources/premium.jpg" alt="">
-            <h1>Premiun Materials</h1>
-            <p>Our guitars use the shiniest brass which is sourced locally. This will increase the longevity of your purchase. </p>
-            <img src="resources/shiping.png" alt="">
-            <h1>Fast Shipping</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil vero veniam numquam accusamus inventore voluptatum laborum, dolor voluptate laudantium, rem asperiores culpa harum commodi? Voluptate blanditiis fugiat excepturi eos praesentium.</p>
-            <img src="resources/quality-assurance.png" alt="">
-            <h1>Quality Assurance</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil vero veniam numquam accusamus inventore voluptatum laborum, dolor voluptate laudantium, rem asperiores culpa harum commodi? Voluptate blanditiis fugiat excepturi eos praesentium.</p>
-        </section>
-        <section class="video">
-            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/mJcsOjg-cAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <link rel="stylesheet" href="resources/style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section>
+        <img src="logo-guitar.jpg" alt="logo" id="header-img" />
+      </section>
+      <nav id="nav-bar">
+        <menu>
+          <li><a class="nav-link" href="#one">Features</a></li>
+          <li><a class="nav-link" href="#video">How It Works</a></li>
+          <li><a class="nav-link" href="#prices">Pricing</a></li>
+        </menu>
+      </nav>
+    </header>
+    <main>
+      <section class="form">
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+          <legend><h1>Handcrafted, home-made masterpieces</h1></legend>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Enter your e-mail address"
+            required
+          /><br />
+          <input type="submit" id="submit" />
+        </form>
+      </section>
+      <section class="one" id="one">
+        <img src="resources/premium.jpg" alt="" />
+        <h2>Premiun Materials</h2>
+        <p>
+          Our guitars use the shiniest brass which is sourced locally. This will
+          increase the longevity of your purchase.
+        </p>
+        <img src="resources/shiping.png" alt="" />
+        <h2>Fast Shipping</h2>
+        <p>
+          We make sure you recieve your guitar as soon as we have finished
+          making it. We also provide free returns if you are not satisfied.
+        </p>
+        <img src="resources/quality-assurance.png" alt="" />
+        <h2>Quality Assurance</h2>
+        <p>
+          For every purchase you make, we will ensure there are no damages or
+          faults and we will check and test the pitch of your instrument.
+        </p>
+      </section>
+      <section class="video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/uK9_TJL8gLc"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section id="prices">
+        <section>
+          <h2>Les Paul</h2>
+          <span>$20600 </span>
+          <input type="submit" value="Select" />
         </section>
         <section>
-            <section id="prices">
-                <h2></h2>
-                <p></p>
-                <button></button>
-            </section>
-            <section>
-                <h2></h2>
-                <p></p>
-                <button></button>
-            </section>
-            <section>
-                <h2></h2>
-                <p></p>
-                <button></button>
-            </section>
+          <h2>Flying V</h2>
+          <span>$39000</span>
+          <input type="submit" value="Select" />
         </section>
-      </main>
-      <footer></footer>
-</body>
+        <section>
+          <h2>Semiacustic</h2>
+          <span>$28500</span>
+          <input type="submit" value="Select" />
+        </section>
+      </section>
+    </main>
+    <footer>
+      <ul>
+        <li>Privacity</li>
+        <li>Terms</li>
+        <li>Contact</li>
+      </ul>
+    </footer>
+  </body>
 </html>
