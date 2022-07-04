@@ -2,8 +2,8 @@ POST http://localhost:4002/products
 content-type: application/json
 
 {
-    "name": "Caderno 60 folhas",
-    "price": 16
+    "name": "Caneta preta",
+    "price": 2.50
 }
 
 ###
@@ -12,5 +12,20 @@ GET http://localhost:4002/products
 
 ###
 
-GET http://localhost:4002/products/117567e7-a32f-49db-a212-5bbccdb2902c 
+GET http://localhost:4002/products/7e1c7d80-dfae-4660-ae95-cc93a1480f69
+
+###
+
+PUT http://localhost:4002/products/ee67344b-e986-4fe7-8a99-bc3c4d719664 
+content-type: application/json
+
+{
+    "name": "Caneta preta",
+    "price": 3.50
+}
+
+###
+
+DELETE http://localhost:4002/products/3e576c93-a94c-42ab-a711-3a6d5dbd8fed
+
 
