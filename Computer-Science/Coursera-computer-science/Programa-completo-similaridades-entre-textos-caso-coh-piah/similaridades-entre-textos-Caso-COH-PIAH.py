@@ -1,32 +1,34 @@
+from gettext import find
 import re
+from statistics import median
+
 
 def le_assinatura():
     '''A funcao le os valores dos tracos linguisticos do modelo e devolve uma assinatura a ser comparada com os textos fornecidos'''
     print("Bem-vindo ao detector automático de COH-PIAH.")
     print("Informe a assinatura típica de um aluno infectado:")
-
-    wal = float(input("Entre o tamanho médio de palavra: "))
-    ttr = float(input("Entre a relação Type-Token: "))
-    hlr = float(input("Entre a Razão Hapax Legomana: "))
-    sal = float(input("Entre o tamanho médio de sentença: "))
-    sac = float(input("Entre a complexidade média da sentença: "))
-    pal = float(input("Entre o tamanho medio de frase: "))
-
-
+    
+    wal = float(input("Entre o tamanho médio de palavra:"))
+    ttr = float(input("Entre a relação Type-Token:"))
+    hlr = float(input("Entre a Razão Hapax Legomana:"))
+    sal = float(input("Entre o tamanho médio de sentença:"))
+    sac = float(input("Entre a complexidade média da sentença:"))
+    pal = float(input("Entre o tamanho medio de frase:"))
+    
+    
     return [wal, ttr, hlr, sal, sac, pal]
 
 def le_textos():
     '''A funcao le todos os textos a serem comparados e devolve uma lista contendo cada texto como um elemento'''
     i = 1
-    textos = []
-
-
+    textos = ["Senão quando, estando eu ocupado em preparar e apurar a minha invenção, recebi em cheio um golpe de ar; adoeci logo, e não me tratei. Tinha o emplasto no cérebro; trazia comigo a idéia fixa dos doidos e dos fortes. Via-me, ao longe, ascender do chão das turbas, e remontar ao Céu, como uma águia imortal, e não é diante de tão excelso espetáculo que um homem pode sentir a dor que o punge. No outro dia estava pior; tratei-me enfim, mas incompletamente, sem método, nem cuidado, nem persistência; tal foi a origem do mal que me trouxe à eternidade. Sabem já que morri numa sexta-feira, dia aziago, e creio haver provado que foi a minha invenção que me matou. Há demonstrações menos lúcidas e não menos triunfantes. Não era impossível, entretanto, que eu chegasse a galgar o cimo de um século, e a figurar nas folhas públicas, entre macróbios. Tinha saúde e robustez. Suponha-se que, em vez de estar lançando os alicerces de uma invenção farmacêutica, tratava de coligir os elementos de uma instituição política, ou de uma reforma religiosa. Vinha a corrente de ar, que vence em eficácia o cálculo humano, e lá se ia tudo. Assim corre a sorte dos homens."]
+    '''
     texto = input("Digite o texto " + str(i) +" (aperte enter para sair):")
     while texto:
         textos.append(texto)
         i += 1
         texto = input("Digite o texto " + str(i) +" (aperte enter para sair):")
-
+    '''
     return textos
 
 def separa_sentencas(texto):
@@ -73,110 +75,41 @@ def n_palavras_diferentes(lista_palavras):
     return len(freq)
 
 def compara_assinatura(as_a, as_b):
-        '''IMPLEMENTAR. Essa funcao recebe duas assinaturas de texto e deve devolver o grau de similaridade nas assinaturas.'''
-        similaridade = []
-        for item in as_a:
-            sum = 0
-            for i in range(len(item)):
-                sum += abs(item[i] - as_b[i])
-            similaridade.append(sum / 6)
-        return  similaridade
+    '''IMPLEMENTAR. Essa funcao recebe duas assinaturas de texto e deve devolver o grau de similaridade nas assinaturas.'''
+    sum = 0
+    for i in range(6):
+        sum += abs(as_a[i] - as_b[i])
+    return round(sum / 6, 2)
+    
 
-def calcula_assinatura(textos):
+def calcula_assinatura(texto):
     '''IMPLEMENTAR. Essa funcao recebe um texto e deve devolver a assinatura do texto.'''
-    sentencas = []
-    frases = []
+    sentencas = separa_sentencas(texto)
+    frases = [" ".join(separa_frases(sentenca)) for sentenca in sentencas]
     palavras = []
-    tamanho_medio_sentenca = []
-    numeros_caracters_sentenca = []
-    tamanho_medio_frase = []
-    num_total_frases = []
-    num_total_sentencas = []
-    complexidade_sentencas = []
-    tamanho_medio_palavras = []
-    soma_tamanho_palavras = []
-    numero_total_palavras = []
-    relacao_type_token = []
-    numero_palavras_diferentes = []
-    razao_hapax_legoma = []
-    palavras_unica_vez = []
-    assinatura = []
-
-    for texto in textos:
-        temp = separa_sentencas(texto).copy()
-        sentencas.append(separa_sentencas(texto))
-        temp1 = []
-        temp3 = []
-        for sentenca in temp:
-            temp1 += separa_frases(sentenca)
-        frases.append(temp1)
-        temp2 = temp1.copy()
-        for frase in temp2:
-            temp3 += separa_palavras(frase)
-        palavras.append(temp3)
     for frase in frases:
-        sum = 0
-        for item in frase:
-            sum += len(item)
-        if len(frase) != 0:
-            tamanho_medio_frase.append(sum / len(frase))
-            num_total_frases.append(len(frase))
+        temp = separa_palavras(frase)
+        palavras += temp
+        temp
 
-    for sentenca in sentencas:
-        num_total_sentencas.append(len(sentenca))
-        sum = 0
-        for item in sentenca:
-            sum += len(item)
-        numeros_caracters_sentenca.append(sum)
-
-    if numeros_caracters_sentenca != 0:
-        complexidade_sentencas = [num_total_frases[i] / num_total_sentencas[i] for i in range(len(sentencas))]
-
-    for palavra in palavras:
-        sum = 0
-        numero_palavras_diferentes.append(n_palavras_diferentes(palavra))
-        palavras_unica_vez.append(n_palavras_unicas(palavra))
-        for item in palavra:
-            sum += len(item)
-        soma_tamanho_palavras.append(sum)
-        numero_total_palavras.append(len(palavra))
-    if numero_total_palavras != 0:
-        tamanho_medio_palavras = [soma_tamanho_palavras[i] / numero_total_palavras[i] for i in
-                             range(len(sentencas))]
-        relacao_type_token = [numero_palavras_diferentes[i] / numero_total_palavras[i] for i in
-                          range(len(sentencas))]
-        razao_hapax_legoma = [palavras_unica_vez[i] / numero_total_palavras[i] for i in range(len(sentencas))]
-    if num_total_sentencas != 0:
-        tamanho_medio_sentenca = [numeros_caracters_sentenca[i] / num_total_sentencas[i] for i in range(len(sentencas))]
-    for item in range(len(sentencas)):
-        temp = ""
-        temp = [tamanho_medio_palavras[item], relacao_type_token[item], razao_hapax_legoma[item], tamanho_medio_sentenca[item], complexidade_sentencas[item], tamanho_medio_frase[item]]
-        assinatura.append(temp)
-    return assinatura
+    tamanho_medio_frase = median([len(frase.replace(" ", "")) for frase in frases])
+    complexidade_sentenca = median([len(separa_frases(sentenca)) for sentenca in sentencas])
+    tamanho_medio_sentenca = median([len(sentenca.replace(" ", "")) for sentenca in sentencas])
+    tamanho_medio_palavra = median([len(palavra) for palavra in palavras])
+    relacao_type_token = round(n_palavras_diferentes(palavras) / len(palavras), 2 ) 
+    razao_hapax_legomana = round(n_palavras_unicas(palavras) / len(palavras), 2 ) 
+   
+    return [tamanho_medio_palavra, relacao_type_token, razao_hapax_legomana, tamanho_medio_sentenca, complexidade_sentenca, tamanho_medio_frase]
 
 def avalia_textos(textos, ass_cp):
     '''IMPLEMENTAR. Essa funcao recebe uma lista de textos e uma assinatura ass_cp e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
-    infectado = compara_assinatura(calcula_assinatura(textos), ass_cp)
-    index = infectado.index(min(infectado))
-    return index + 1
-
-
-avalia_textos(le_textos(),  le_assinatura())
-
-
-
+    similaridade = []
+    for item in textos:
+        similaridade.append(compara_assinatura(calcula_assinatura(item),  ass_cp ))
+    
+    
+    return similaridade.index(min(similaridade)) + 1
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+avalia_textos(le_textos(), le_assinatura())
