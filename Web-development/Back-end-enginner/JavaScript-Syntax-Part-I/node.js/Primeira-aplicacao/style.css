@@ -1,0 +1,10 @@
+.wheel {
+    width: 300px;
+    height: 300px;
+    max-width: 500px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+h2 {
+ color: blue;
+}
